@@ -33,7 +33,7 @@ function NavigationHeader() {
   return (
     <header className="p-4 bg-white shadow-sm flex justify-between items-center sticky top-0 z-50">
       <div className="flex items-center gap-3">
-        <img src="/logo.jpg" alt="Guru Chela Logo" className="h-10 w-10 sm:h-12 sm:w-12 object-cover object-center rounded-full flex-shrink-0 border-2 border-primary-100 shadow-sm" />
+        <img src="logo.jpg" alt="Guru Chela Logo" className="h-10 w-10 sm:h-12 sm:w-12 object-cover object-center rounded-full flex-shrink-0 border-2 border-primary-100 shadow-sm" />
         <Link to={user ? (user.role === 'Developer' ? '/developer' : '/learner') : "/"} className="text-lg sm:text-xl font-bold text-primary-600 hidden sm:block">Padhai with Guru Chela</Link>
       </div>
       <nav className="flex gap-4 items-center">
@@ -56,7 +56,7 @@ function NavigationHeader() {
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="min-h-screen bg-gray-50 text-gray-900 font-sans flex flex-col">
         <NavigationHeader />
 
